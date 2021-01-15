@@ -20,8 +20,8 @@
       <nav>
         <ul>
           <li><a href="index.html "> Main </a></li>
-          <li><a href="funny.html"> Funny </a></li>
-          <li><a href="coder.html"> Proverb</a></li>
+          <li><a href="funny.html"> Funny generator</a></li>
+          <li><a href="coder.html"> Smart generator</a></li>
         </ul>
       </nav>
       <generator>
@@ -41,15 +41,48 @@
       
         <p>  </p>
         <ul>
-          <li><button id="funnyQuote" class="butt" onclick="generateQuote()">Funny quote</button>	</li>
+          <li><button id="funnyQuote" class="butt" onclick="generateQuote()">Funny generator</button>	</li>
          
           
-            <li><form class="butt2">
+            <li><form >
               Change the quantity of quotes (between 1 and 5):
               <input id="numOfQuotes1" type="number" name="quantity" min="1" max="5" value="1">
            </form>	</li>
+
+           <li>  Choose Present or Future Time:
+            <select id="time"  class="">
+              <option value="none" >-- Time --</option>
+              <option value="Present">Present</option>
+              <option value="Future">Future</option>
+              
+          </select> 
+
+           </li>
+
+           
+           <!-- <li><form class="text">
+            Change the quantity of quotes :
+            <input id="numOfQuotes1" type="text" name="quantity" value="1">
+         </form>	</li> -->
+
+
+           <!-- <li > 
+            <div class="dropdown">
+              <div class="select">
+                <span>Choose Present or Future:</span>
+                <i class="fa fa-chevron-left"></i>
+              </div>
+    
+                  <ul class="dropdown-menu">
+                    <li id="present">Present Time</li>
+                    <li id="future">Future Time</li>
+                  </ul> </form>
+            </div>
+         -->
             
-            <li><a  class= "butt2" href="index.html" > <---back to main</a></li>
+           </li>
+            
+            <li><a  class= "butt2" href="index.html" > <---back to main page</a></li>
         </ul>
       
   

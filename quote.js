@@ -1,3 +1,4 @@
+// arrive for funny generator 
 let begginingQuote = [
     'Nazar',
     'Tatsiana',
@@ -18,24 +19,74 @@ let middleQuote = [
             ]
 
 let endQuote = [
-        'to get up early🌖',
-         'to eat fish🐟 with milk 🍶',
-         'talk to a parrot🦜',
-         'to sleep till afternoon😴',
-         'to read books📖',
-         'to show tongue.👅',
-         ' to paint your nails  💅',
-         'to eat snow ⛄', 
-         'fly a UFO🛸 ' ,
-         'to live in Africa🇿🇦',
-         'to speek a lot 👄',
-         'to dance every evening 💃'
+  'to get up early🌖',
+  'to eat fish🐟 with milk 🍶',
+  'talk to a parrot🦜',
+  'to sleep till afternoon😴',
+  'to read books📖',
+  'to show tongue.👅',
+  ' to paint your nails  💅',
+  'to eat snow ⛄', 
+  'fly a UFO🛸 ' ,
+  'to live in Africa🇿🇦',
+  'to speek a lot 👄',
+  'to dance every evening 💃',
+  'to travel to the Mars 🚀 ',
+  'to drive the tractor 🚜',
+  'to drink coctails🍹 with absent',
+  'to work in cirkus 🎪',
+  ' to have best friend pig🐖',
+  ' to wear high heels👠'
+
 
          
   ]
 
+  // arrive for funny generator for FUTURE
+let begginingQuote2 = [
+  'Nazar',
+  'Tatsiana',
+  'Aleksey',
+  'Anastasia',
+  'Vadim',
+  'Alexandr',
+  'Artur',
+  'Irina',
+  'Diana',
+  'Arseny',
+  'Natalia'
+  ]
 
-  let partoneQuote = [
+let middleQuote2 = [
+  'will',
+  "will not"
+          ]
+
+let endQuote2 = [
+  ' get up early🌖',
+  'eat fish🐟 with milk 🍶',
+  'talk to a parrot🦜',
+  'sleep till afternoon😴',
+  ' read books📖',
+  'show tongue.👅',
+  ' paint own nails  💅',
+  'eat snow ⛄', 
+  'fly a UFO🛸 ' ,
+  ' live in Africa🇿🇦',
+  ' speek a lot 👄',
+  'dance every evening 💃',
+  ' travel to the Mars 🚀 ',
+  'drive the tractor 🚜',
+  ' drink coctails🍹 with absent',
+  ' work in cirkus 🎪',
+  ' have best friend pig🐖',
+  ' wear high heels👠'
+
+       
+]
+
+// arrive for smart generator
+  let smartQuote = [
    [ 'Don’t cross the bridge until you come to it.',
     'Don’t make a mountain out of an anthill.',
     'The cat is out of the bag. / Truth will out.',
@@ -75,16 +126,18 @@ let endQuote = [
   ]
   ]
 
+  //function for random number from arrive.length
 function randomInt(length){
 	randNumber = Math.floor(Math.random() * (length));
 	return randNumber;
 };
 
-// exapmle for me
-result = begginingQuote[randomInt(begginingQuote.length)] +" " + middleQuote[randomInt(middleQuote.length)] + " " + endQuote[randomInt(endQuote.length)];
-document.getElementById("quote3").innerHTML = result;
+// exapmle for me. dont used
+//result = begginingQuote[randomInt(begginingQuote.length)] +" " + middleQuote[randomInt(middleQuote.length)] + " " + endQuote[randomInt(endQuote.length)];
+//document.getElementById("quote3").innerHTML = result;
 
 
+// funny generator:
 function generateQuote() {
     let numOfQuotes = document.getElementById("numOfQuotes1").value;
     if (numOfQuotes > 5) {
@@ -93,17 +146,33 @@ function generateQuote() {
       numOfQuotes = 1;
       };
      let result = '';
-     
+     let select = document.getElementById('time').value;
+     switch (select) {
+      case 'Present': {
         for (let i = 0; i < numOfQuotes; i++) {	
-                     let oneQuote = begginingQuote[randomInt(begginingQuote.length)] +" " + middleQuote[randomInt(middleQuote.length)] + " " + endQuote[randomInt(endQuote.length)];; 
-        result += "<p>'" + oneQuote + "'</p>";	
-        };	
-    	
-     document.getElementById("quote").innerHTML = result;
+          let oneQuote = begginingQuote[randomInt(begginingQuote.length)] +" " + middleQuote[randomInt(middleQuote.length)] + " " + endQuote[randomInt(endQuote.length)];; 
+          result += "<p>'" + oneQuote + "'</p>" ;	
+          };
+          document.getElementById("quote").innerHTML = result;
+        }
+        break;
+        case 'Future': {
+          for (let i = 0; i < numOfQuotes; i++) {	
+            let oneQuote = begginingQuote2[randomInt(begginingQuote.length)] +" " + middleQuote2[randomInt(middleQuote.length)] + " " + endQuote2[randomInt(endQuote.length)];; 
+            result += "<p>'" + oneQuote + "'</p>" ;	
+            };
+            document.getElementById("quote").innerHTML = result;
+          }
+          break;
+        default: 
+        document.getElementById("quote").innerHTML = "Sorry,you didn't choose Time" ;
+      }
+
 };
 
-
+// Smart generator:
 function generateQuote2() {
+ 
   let numOfQuotes2 = document.getElementById("numOfQuotes2").value;
   if (numOfQuotes2 > 3) {
     numOfQuotes2 = 3;
@@ -111,27 +180,26 @@ function generateQuote2() {
     numOfQuotes2 = 1;
     };
    let result2 = '';
+   
+   // add checkbox with russian translate
    let chbox = document.getElementById('rusTransl');
    if (chbox.checked) {	
-
-
       for (let i = 0; i < numOfQuotes2; i++) {	
-        let randNumber = randomInt(partoneQuote[0].length);			
-        let oneQuote2 = partoneQuote[0][randNumber] +"' "+ partoneQuote[1][randNumber] ;
+        let randNumber = randomInt(smartQuote[0].length);			
+        let oneQuote2 = smartQuote[0][randNumber] +"' "+ smartQuote[1][randNumber] ;
          result2 += "<p>" + oneQuote2 + "</p>";	
       };	
+
       document.getElementById("quote2").innerHTML = result2;
     } else { 
       for (let i = 0; i < numOfQuotes2; i++) {	
-        let randNumber = randomInt(partoneQuote[0].length);			
-        let oneQuote2 = partoneQuote[0][randNumber]  ;
+        let randNumber = randomInt(smartQuote[0].length);			
+        let oneQuote2 = smartQuote[0][randNumber]  ;
          result2 += "<p>" + oneQuote2 + "</p>";	
       };	
       document.getElementById("quote2").innerHTML = result2;
-
     }
 };
 
 
      
-
